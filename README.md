@@ -30,7 +30,8 @@ I understand that classification accuracy alone does not address neural alignmen
 
 | Model | Optimizer | Mean Accuracy | Std Dev | 
 |-------|-----------|---------------|---------|
-| ViT-Small | SGD | **90.05%** | ±0.12% |
+| ViT-Small | SGD | 90.05% | ±0.12% |
+| ViT-Small | AdamW | 88.42% | 0.18% |
 | ResNet-34 | AdamW | 77.72% | ±0.27% |
 | ResNet-34 | SGD | 46.69% | ±0.23% |
 
