@@ -36,9 +36,9 @@ class Config:
     SEEDS: List[int] = [42, 101, 1337, 2024, 888]
     DEVICE: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     NUM_EPOCHS: int = 10
-    BATCH_SIZE: int = 512
+    BATCH_SIZE: int = 512 # Adjust based on your GPU memory
     IMG_SIZE: int = 224
-    NUM_WORKERS: int = 2
+    NUM_WORKERS: int = 8 # Adjust based on your GPU cores
     RESULTS_DIR: Path = Path("fair_comparison_results")
     
     OPTIMIZERS = {

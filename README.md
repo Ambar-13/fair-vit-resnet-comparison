@@ -35,6 +35,9 @@ I understand that classification accuracy alone does not address neural alignmen
 | ResNet-34 | SGD | 46.69% | ±0.23% |
 
 **Statistical significance:** *p* < 0.0001 (paired *t*-test), Cohen's *d* = 65.2
+![Avg_ROC Curve](figures/avg_roc_curves.png)
+
+![Overall Model Performance](figures/overall_model_performance.png)
 
 **Key finding:** ViT demonstrates robust performance across optimizers, while ResNet shows optimizer sensitivity (non-convergence under SGD).
 
@@ -68,7 +71,7 @@ Results will be saved to `results/` directory.
 
 ### Advanced Usage
 ```python
-# Modify configuration in fair_comparison.py
+# Modify configuration in comparison.py
 class Config:
     SEEDS = [42, 101, 1337, 2024, 888]   # Change seeds
     NUM_EPOCHS = 10                      # Adjust training duration
@@ -77,7 +80,7 @@ class Config:
 
 ### Analyze Results
 ```bash
-python analyze_results.py --results_dir results/
+python analysis.py --results_dir results/
 ```
 
 ## Project Structure
@@ -86,10 +89,10 @@ dicarlo_fair_comparison/
 ├── README.md             # Project overview
 ├── METHODOLOGY.md        # Detailed experimental methods
 ├── RESULTS.md            # Extended results
-├── fair_comparison.py    # Main training script
-├── analyze_results.py    # Statistical analysis
+├── models/               # Fine tuned models saved (Currently this has saved models for seed 42 and seed 101). These are just for reference and may be deleted before starting the experiment
+├── comparison.py         # Main training script
+├── analysis.py    # Statistical analysis
 ├── requirements.txt      # Dependencies
-├── results/              # Output directory
 └── figures/              # Visualizations
 
 ```
