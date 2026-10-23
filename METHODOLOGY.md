@@ -39,6 +39,8 @@ Train: TrivialAugmentWide, resize to 224 x 224, ImageNet normalisation. Validati
 | AdamW | 1e-4, 3e-4, 1e-3 |
 | SGD | 1e-2, 3e-2, 1e-1 |
 
+If a winner sits on the top edge of the grid, the grid is extended one step upward for both models (`slurm/sweep_up.sh`, then `sweep_up2.sh`) and the choice is remade over every sweep file by `choose_lr.py`, which refuses to write while any winner is still on the edge. In the matched run the ResNet needed two extensions (final rates AdamW 3e-3, SGD 0.3); the ViT's winners were interior from the start (AdamW 1e-4, SGD 0.01).
+
 If no sweep file exists the script falls back to the original unmatched values (AdamW 3e-4, SGD 1e-2) and prints a warning. Do not report results from the fallback.
 
 ## 5. Model selection and evaluation

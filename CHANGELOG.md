@@ -2,7 +2,10 @@
 
 ## October 2026
 
-Protocol revision after a code review.
+Protocol revision after a code review, and the matched rerun (23 October, NUS SoC cluster): ViT-Small 87.1, ResNet-34 82.0, gap 5.2 points against the 12.3 reported in October 2025. See RESULTS.md.
+
+- The learning-rate grid is extended one step at a time, for both models, until every winner is interior; `choose_lr.py` refuses to write rates while a winner sits on the grid edge. The ResNet needed two extensions.
+- `report.py` summarises runs without importing torch; the Slurm scripts unpack the dataset on node-local disk per job.
 
 - Pretraining data matched. Both models now load ImageNet-1k-only weights by explicit tag. The October 2025 run used timm's default for the ViT, which is pretrained on ImageNet-21k, against an ImageNet-1k ResNet.
 - Epoch selection moved to a validation split carved from the training set. The earlier run kept the best of ten test-set evaluations.
