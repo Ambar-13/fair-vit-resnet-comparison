@@ -2,3 +2,8 @@
 data/
 fair_comparison_results/
 __pycache__/
+venv/
+.hf_cache/
+slurm/out_*.txt
+.pip-cache/
+.tmp/

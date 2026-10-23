@@ -69,7 +69,7 @@ def test_loader():
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
-    ds = torchvision.datasets.Food101(root="./data", split="test", download=False, transform=tf)
+    ds = torchvision.datasets.Food101(root=Config.DATA_ROOT, split="test", download=False, transform=tf)
     return DataLoader(ds, batch_size=Config.BATCH_SIZE, shuffle=False, num_workers=Config.NUM_WORKERS), ds.classes
 
 
